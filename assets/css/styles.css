@@ -1,0 +1,78 @@
+/** SHARED SPREADSHEET ACROSS ALL CSS/HTML FILES **/
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400|Roboto:400,400italic,700);
+
+#nav_right a:hover {
+    color: #ffd139;
+}
+
+#logo {
+    width: 50px;
+    height: 50px;
+    background: #ffd139;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+nav {
+    max-width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#title {
+    color: #8699CC;
+    font-weight: bold;
+    font-size: 3em;
+}
+
+#nav_left {
+    float: left;
+    width: 60%;
+    margin-left: 10px;
+}
+
+#nav_right {
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 480px) {
+    #nav_right {
+    clear: right;
+    width: 80%;
+}
+}
+
+@media screen and (min-width: 800px) {
+    #nav_right {
+    float: left;
+    width: auto;
+        margin-right: 20%;
+}
+}
+
+#nav_left li {
+    display: inline-block;
+    padding: 0px 10px;
+}
+
+#nav_right a {
+    text-decoration: none;
+    color: #8699CC;
+}
+
+#nav_right li{
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.5em;
+    margin: 10px 15px;
+    color: #8699CC;
+}
+
+#link_active a {
+    color: #ffd139;
+}
+
+/**body {
+    font-family: 'Roboto', sans-serif;
+}**/

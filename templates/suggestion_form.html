@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% load bootstrap3 %}
+{% load static from staticfiles %}
+
+{% block title %}Suggest an idea{% endblock %}
+
+{% block static %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/suggestion_form.css" %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+    {% if messages %}
+        {{ message }}
+        {% endif %}
+    </div>
+    <div class="row">
+    <form action="" method="POST" id="suggestions_form">
+        {% csrf_token %} <!-- provide security -->
+        {% bootstrap_form form %}
+        <input type="submit" class="btn btn-default">
+    </form>
+    </div>
+{% endblock %}

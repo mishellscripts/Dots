@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}Homepage{% endblock %}
+<h1>Question?</h1>
+
+<div id="container">
+
+    <form action="" method="POST">
+        {{ form.as_p }}
+        {% csrf_token %} <!-- provide security -->
+        <input type="submit" class="button">
+    </form>
+
+</div>
+
+{% block content %}
+{% endblock %}

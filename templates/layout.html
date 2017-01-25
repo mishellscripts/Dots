@@ -1,0 +1,50 @@
+<!-- SHARED TEMPLATE ACROSS ALL HTML FILES -->
+
+{% load static from staticfiles %}
+
+
+<!doctype html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="{% static "css/normalize.css" %}" />
+        <link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}" />
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        {% block static %}{% endblock %}
+    </head>
+    <nav>
+        <div id="nav_left">
+            <li><a href="{% url 'main' %}"><div id="logo"></div></a></li>
+            <li><h1 id="title">Title</h1></li>
+        </div>
+        <div id="nav_right">
+            <!-- DECLARE URL VARIABLES HERE -->
+            {% url 'about' as about_url %}
+            {% url 'post:view' as view_url %}
+            {% url 'sign_in' as sign_in_url %}
+
+            {% if request.get_full_path == about_url %}
+                <li id="link_active"><a href="{%  url 'about' %}">About</a></li>
+            {% else %}
+                <li><a href="{%  url 'about' %}">About</a></li>
+            {% endif %}
+            {% if request.get_full_path == view_url %}
+                <li id="link_active"><a href="{% url 'post:view' %}">View</a></li>
+            {% else %}
+                <li><a href="{% url 'post:view' %}">View</a></li>
+            {% endif %}
+            {% if request.get_full_path == sign_in_url %}
+                <li id="link_active"><a href="{% url 'sign_in' %}">Sign In</a></li>
+            {% else %}
+            <li><a href="{% url 'sign_in' %}">Sign In</a></li>
+            {% endif %}
+        </div>
+    </nav>
+    <body>
+        <div class="site-container">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>
