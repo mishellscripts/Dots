@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 
@@ -9,7 +9,7 @@ def view(request):
     return render(request, 'post/view.html')
 
 def post_create(request):
-    form = forms.PostForm
+    form = forms.PostForm()
 
     if request.method == 'POST':
         form = forms.PostForm(request.POST)
@@ -18,4 +18,4 @@ def post_create(request):
             post.save()
             messages.add_message(request, messages.SUCCESS, "Post added!")
             return HttpResponseRedirect(post.get_absolute_url())
-    return render(request, 'about.html')
+    return render(request, 'home.html', {'form': form })

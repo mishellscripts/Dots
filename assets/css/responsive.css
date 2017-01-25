@@ -1,0 +1,19 @@
+@media screen and (min-width: 480px) {
+    #nav_left {
+        float: none;
+        width: 100%;
+    }
+    #nav_right {
+        float: none;
+        width: auto;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (min-width: 660px) {
+    #nav_left {
+        float: left;
+        width: calc(60% - 190px);
+    }
+}

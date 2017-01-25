@@ -25,37 +25,12 @@ nav {
     font-size: 3em;
 }
 
-#nav_left {
-    float: left;
-    width: 60%;
-    margin-left: 10px;
-}
-
-#nav_right {
-    margin-top: 20px;
-}
-
-@media screen and (min-width: 480px) {
-    #nav_right {
-    clear: right;
-    width: 80%;
-}
-}
-
-@media screen and (min-width: 800px) {
-    #nav_right {
-    float: left;
-    width: auto;
-        margin-right: 20%;
-}
-}
-
 #nav_left li {
     display: inline-block;
     padding: 0px 10px;
 }
 
-#nav_right a {
+#nav_right a,  #title a  {
     text-decoration: none;
     color: #8699CC;
 }
