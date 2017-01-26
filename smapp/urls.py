@@ -17,10 +17,11 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 from . import views
-
+from post import views as view2
 
 urlpatterns = [
-    url(r'^$', views.main_page, name='main'),
+    url(r'^$', view2.post_create, name='main'),
+    #url(r'^$', views.main_page, name='main'),
     url(r'^post/', include('post.urls', namespace='post')),
     url(r'^admin/', admin.site.urls),
     url(r'^about/', views.about, name='about'),

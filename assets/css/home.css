@@ -1,13 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400|Roboto:400,400italic,700,100);
 
-#prompt {
-    color: #ffd139;
-    font-family: 'Roboto', sans-serif;
-    font-size: 5em;
-    clear: left;
-    font-weight: 100;
-    text-align: center;
-}
+/** ==============================
+                EXTRA
+================================== */
 
 #main_divider {
     margin-top: 50px;
@@ -17,7 +12,70 @@
     background-attachment: fixed;
 }
 
+/** ==============================
+   TEXT BUBBLE SUBMISSION FORM
+================================== */
+input {
+    font-family: 'Roboto', sans-serif;
+}
+
+.message {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: #8699CC;
+    font-size: 1.5em;
+}
+
+#prompt {
+    color: #ffd139;
+    font-family: 'Roboto', sans-serif;
+    font-size: 5em;
+    clear: left;
+    font-weight: 100;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#main_container {
+    max-width: 60%;
+    position: relative;
+    margin-top: 50px;
+    left: 20%;
+    padding: 2% 0 10% 0;
+}
+
+#form_container {
+    max-width: 100%;
+    position: relative;
+    margin-top: 20px;
+
+}
+
 #post_form {
     position: relative;
-    left: 50%;
+    width: 100%;
+}
+
+#save_button {
+    display: none;
+}
+
+#submit_button {
+    float: left;
+    font-family: 'Montserrat', sans-serif;
+    border: solid #fff 1px;
+    border-radius: 25px;
+    /**padding: 10px 100px !important;*/
+    width: 40%;
+    position: relative;
+    left: 60%;
+    margin: 0 auto;
+    font-size: 1.5em !important;
+    /*background-color: #ffd139;*/
+
+    background: #F7971E; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #f2ac15, #FFD200); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #f2ac15, #FFD200); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: #fff;
 }

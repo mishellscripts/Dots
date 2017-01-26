@@ -1,7 +1,7 @@
 <!-- SHARED TEMPLATE ACROSS ALL HTML FILES -->
 
 {% load static from staticfiles %}
-
+{% load bootstrap3 %}
 
 <!doctype html>
 <html>
@@ -15,7 +15,7 @@
         <meta name="viewport" content="width-device-width, initial-scale=1.0">
         {% block static %}{% endblock %}
     </head>
-    <nav>
+    <nav class="row">
         <div id="nav_left">
             <li><a href="{% url 'main' %}"><div id="logo"></div></a></li>
             <li><h1 id="title"><a href="{% url 'main' %}">Title</a></h1></li>

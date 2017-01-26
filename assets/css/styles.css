@@ -1,5 +1,4 @@
 /** SHARED SPREADSHEET ACROSS ALL CSS/HTML FILES **/
-
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400|Roboto:400,400italic,700);
 
 #nav_right a:hover {
@@ -30,12 +29,12 @@ nav {
     padding: 0px 10px;
 }
 
-#nav_right a,  #title a  {
+#nav_right a, #title a {
     text-decoration: none;
     color: #8699CC;
 }
 
-#nav_right li{
+#nav_right li {
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 1px;
