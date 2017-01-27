@@ -4,7 +4,11 @@ from . import models
 
 
 class PostForm(forms.ModelForm):
-    text = forms.CharField(widget=forms.Textarea, label='')
+    text = forms.CharField(widget=forms.Textarea
+                                #(attrs={'style': 'font-size: 1.5em'}),
+                           ,label='',
+                           )
+    text.widget.attrs.update({'class': 'form_input'})
 
     class Meta:
         model = models.Post
