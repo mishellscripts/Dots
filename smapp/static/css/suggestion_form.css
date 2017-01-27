@@ -1,0 +1,26 @@
+input {
+    font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (min-width: 480px) {
+    #suggestions_form {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 100px;
+        /**border-radius: 20px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #8699CC;**/
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2em;
+        color: #8699CC;
+    }
+}
+
+@media screen and (min-width: 660px) {
+    #suggestions_form {
+        max-width: 400px;
+        margin-left: calc(20% + 190px);
+    }
+}
