@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'post',
     'bootstrap3',
-    'jquery'
+    'jquery',
+    'jquery_ui',
 ]
 
 MIDDLEWARE = [

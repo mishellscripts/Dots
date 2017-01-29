@@ -1,9 +1,20 @@
-$(document).ready(function () {
-    $('#prompt').html("<p>working</p>");
-    /**$('#submit_button').on("click", function() {
-        $('#main_container').stop().animate({backgroundColor: '#8699CC', "slow"});
-    });*/
-});
+/*$(document).ready(function(){
+
+  $("#prompt").on("click", function() {
+    alert("Text Clicked");
+  });
+
+});*/
+
+/**if (typeof jQuery != 'undefined') {
+
+    alert("jQuery library is loaded!");
+
+}else{
+
+    alert("jQuery library is not found!");
+
+}*/
 
 /*window.onload = function() {
    if (window.jQuery) {

@@ -7,9 +7,21 @@
 {% block static %}
     <link rel="stylesheet" type="text/css" href="{% static "css/home.css" %}"/>
     <script src="{% static "js/home.js" %}" type="text/javascript"></script>
-    <script type='text/javascript' src="{% static 'jquery-3.1.1.min.js' %}"></script>
-    <script type='text/javascript' src="{% static 'jquery-ui.min.js' %}"></script>
+    <script src="{% static "jquery-3.1.1.min.js" %}" type="text/javascript"></script>
+    <script src="{% static "jquery-ui.js" %}" type="text/javascript"></script>
 
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+             $("#post_form").on("click", function() {
+                 $('#main_container').stop().animate({backgroundColor: "#8699CC"}, 1000);
+                 /** CHANGE BACKGROUND COLOR OF POST FORM TO BLUE AND TEXT COLOR TO WHITE **/
+             });
+
+        });
+
+    </script>
 {% endblock %}
 
 
@@ -33,4 +45,5 @@
             </form>
         </div>
     </div>
+    <div id="test"></div>
 {% endblock %}

@@ -1,13 +1,25 @@
-$(document).ready(function () {
-    $('#submit_button').on("click", function() {
-        $('#main_container').stop().animate({backgroundColor: '#8699CC', "slow"});
-    });
-});
+/*$(document).ready(function(){
 
-/**window.onload = function() {
-    if (window.jQuery) {
+  $("#prompt").on("click", function() {
+    alert("Text Clicked");
+  });
+
+});*/
+
+if (typeof jQuery != 'undefined') {
+
+    alert("jQuery library is loaded!");
+
+}else{
+
+    alert("jQuery library is not found!");
+
+}
+
+/*window.onload = function() {
+   if (window.jQuery) {
         // jQuery is loaded
-        alert("Yeah!");
+        alert("Working!");
     } else {
         // jQuery is not loaded
         alert("Doesn't Work");

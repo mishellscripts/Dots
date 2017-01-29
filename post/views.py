@@ -17,6 +17,6 @@ def post_create(request):
             post = form.save(commit=False)
             post.save()
             # messages.add_message(request, messages.SUCCESS, "Post added!")
-            messages.success(request, ("Post added!"))
+            #messages.success(request, ("Post added!"))
             form = forms.PostForm()
     return render(request, './home.html', {'form': form})
