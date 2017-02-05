@@ -1,13 +1,17 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views import generic
 
 from . import models, forms
 
+class UserView(LoginRequiredMixin, generic.ListView):
+    model = models.Post
+    template_name = 'post/user_view.html'
 
 def view(request):
     return render(request, 'post/view.html')
-
 
 def post_create(request):
     form = forms.PostForm()

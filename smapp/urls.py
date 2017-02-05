@@ -24,8 +24,10 @@ urlpatterns = [
     #url(r'^$', views.main_page, name='main'),
     url(r'^post/', include('post.urls', namespace='post')),
     url(r'^admin/', admin.site.urls),
+    url(r'^accounts/', include('django.contrib.auth.urls')),
+    url(r'^accounts/', include('accounts.urls', namespace='accounts')),
     url(r'^about/', views.about, name='about'),
-    url(r'^signin/', views.sign_in, name='sign_in'),
+    #url(r'^signin/', views.sign_in, name='sign_in'),
     url(r'^suggestions/$', views.suggestion_view, name='suggestion'),
 ]
 

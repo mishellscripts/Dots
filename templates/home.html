@@ -14,9 +14,16 @@
 
         $(document).ready(function () {
 
+            $("#post_form textarea").focus();
+
              $("#post_form").on("click", function() {
                  $('#main_container').stop().animate({backgroundColor: "#8699CC"}, 1000);
                  /** CHANGE BACKGROUND COLOR OF POST FORM TO BLUE AND TEXT COLOR TO WHITE **/
+                 $('#post_form textarea').stop().animate({color: "#FFFFFF"}, 1000);
+             });
+             $("#post_form").focusout(function() {
+                 $('#main_container').stop().animate({backgroundColor: "#FFFFFF"}, 1000);
+                 $('#post_form textarea').stop().animate({color: "#000000"}, 1000);
              });
 
         });

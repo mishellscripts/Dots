@@ -37,9 +37,9 @@
                 <li><a href="{% url 'post:view' %}">View</a></li>
             {% endif %}
             {% if request.get_full_path == sign_in_url %}
-                <li id="link_active"><a href="{% url 'sign_in' %}">Sign In</a></li>
+                <li id="link_active"><a href="{% url 'accounts:login' %}">Sign In</a></li>
             {% else %}
-            <li><a href="{% url 'sign_in' %}">Sign In</a></li>
+            <li><a href="{% url 'accounts:login' %}">Sign In</a></li>
             {% endif %}
         </div>
     </nav>
