@@ -6,9 +6,9 @@ from django.views import generic
 
 from . import models, forms
 
-class UserView(LoginRequiredMixin, generic.ListView):
+class UserView(LoginRequiredMixin, generic.TemplateView):
     model = models.Post
-    template_name = 'post/user_view.html'
+    template_name = 'user_view.html'
 
 def view(request):
     return render(request, 'post/view.html')

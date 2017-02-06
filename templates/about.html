@@ -1,4 +1,39 @@
 {% extends "layout.html" %}
+{% load static from staticfiles %}
+
 {% block title %}About{% endblock %}
+
+{% block static %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/about.css" %}"/>
+{% endblock %}
+
 {% block content %}
+    <div id="main_divider"></div>
+    <div id="about">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet viverra risus,
+        nec blandit sapien placerat at. Suspendisse vel blandit leo. Nunc aliquet purus libero,
+        non mollis metus fermentum vel. Nunc elementum nisl in erat cursus convallis.
+        Vivamus ullamcorper condimentum mattis. Class aptent taciti sociosqu ad litora torquent
+        per conubia nostra, per inceptos himenaeos. Integer gravida aliquet aliquet.
+        Maecenas tempus vulputate eros, sed lobortis metus posuere eget. Aliquam pulvinar ante nisl,
+        ut congue lacus venenatis in. In sed nunc at leo vehicula dignissim id at quam.
+        Nullam luctus ligula non nulla imperdiet tincidunt. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Proin iaculis eu libero et placerat. Duis faucibus semper urna,
+        a facilisis erat sollicitudin eget.
+    </div>
+
+    <div id="links">
+        <div class="link">
+            <a href="{% url 'suggestion' %}" id="suggestion_link" class="about_link">
+                <p><span class="glyphicon glyphicon-pencil about_icon" id="suggestion_icon"></span></p>
+                <p>Add a Suggestion</p>
+            </a>
+        </div>
+        <div class="link">
+            <a href="#" id="github_link" class="about_link">
+                <p><i class="fa fa-github about_icon" aria-hidden="true"></i></p>
+                <p>Link to GitHub</p>
+            </a>
+        </div>
+    </div>
 {% endblock %}

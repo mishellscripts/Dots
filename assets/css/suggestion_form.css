@@ -1,3 +1,7 @@
+/** ==============================
+        SUGGESTION FORM
+================================== */
+
 textarea {
     font-family: 'Roboto', sans-serif;
     -moz-border-radius: 15px;
@@ -6,6 +10,10 @@ textarea {
     padding: 5px;
     display: none;
 }
+
+/** ==============================
+       MOBILE DEVICE SUPPORT
+================================== */
 
 @media screen and (min-width: 480px) {
     #suggestions_form {

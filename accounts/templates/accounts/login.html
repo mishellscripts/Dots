@@ -6,11 +6,16 @@
 {% endblock %}
 
 {% block content %}
-<div>
-    <form method="POST">
-        {% csrf_token %}
-        {% bootstrap_form form %}
-        <input type="submit" value="Login" class="btn btn-default">
-    </form>
-</div>
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <input type="submit" value="Login" class="btn btn-default">
+        </form>
+    </div>
+
+    <div>
+        <a href="{% url 'accounts:signup' %}">Sign Up</a>
+    </div>
+
 {% endblock %}

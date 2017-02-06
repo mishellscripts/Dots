@@ -6,6 +6,6 @@ from . import views
 
 urlpatterns = [
     url(r'^view/', views.view, name='view'),
-    url(r'^view/my/', views.UserView.as_view(), name="user_view"),
+    url(r'^view/my/', views.UserView.as_view(template_name = 'post/user_view.html'), name="user_view"),
 ]
 

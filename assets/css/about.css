@@ -1,0 +1,61 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400|Roboto:300,400,400italic,500,700,100);
+
+/* ================================
+        PAGE DIVIDER
+================================== */
+
+#main_divider {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 40px;
+    width: 100%;
+    background: #F7971E;
+    background: -webkit-linear-gradient(to left, #f2ac15, #FFD200);
+    background: linear-gradient(to left, #f2ac15, #FFD200);
+    background-attachment: fixed;
+}
+
+/* ================================
+         ABOUT SECTION
+================================== */
+
+#about {
+    position: relative;
+    left: 20%;
+    font-family: Montserrat, 'sans-serif';
+    font-size: 1.5em;
+    color: #8699CC;
+    width: 60%;
+    font-weight: 400;
+}
+
+
+/* ================================
+            LINKS
+================================== */
+
+.about_link {
+    font-family: Roboto, 'sans-serif';
+    font-size: 2em;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 100;
+    color: #8699CC;
+}
+
+.about_icon {
+    color: #ffd139;
+    font-size: 4em;
+}
+
+#links {
+    text-align: center;
+    width: 60%;
+    position: relative;
+    left: 20%;
+}
+
+.link {
+    display: inline-block;
+    margin: 0px 20px;
+}

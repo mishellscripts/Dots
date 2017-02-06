@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400|Roboto:400,400italic,700,100);
 
-/** ==============================
-                EXTRA
+/* ================================
+        PAGE DIVIDER
 ================================== */
 
 #main_divider {
@@ -12,14 +12,9 @@
     background-attachment: fixed;
 }
 
-/** ==============================
-   TEXT BUBBLE SUBMISSION FORM
+/* ================================
+     TEXT BUBBLE SUBMISSION
 ================================== */
-
-/** (not sure if useful)
-    input, select, textarea {
-    font-family: 'Roboto', sans-serif;
-}*/
 
 .form_input {
     font-size: 1.2em;
@@ -93,12 +88,18 @@
 }
 
 #post_form textarea {
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
     background-color: rgba(0, 0, 0, 0);
-    border: none;
+    border: 0;
     font-size: 2em;
+    font-weight: 100;
     font-family: 'Roboto', sans-serif;
     width: 18em;
     height: 8em;
+    resize: none;
+    color: #a9a9a9;
 }
 
 #save_button {
@@ -108,7 +109,7 @@
 #submit_button {
     float: left;
     font-family: 'Montserrat', sans-serif;
-    border: solid #fff 1px;
+    /*border: solid #fff 1px;*/
     border-radius: 25px;
     /**padding: 10px 100px !important;*/
     width: 40%;
