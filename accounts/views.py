@@ -9,7 +9,7 @@ from . import forms
 class LoginView(generic.FormView):
     form_class = AuthenticationForm
     success_url = reverse_lazy("post:user_view")
-    template_name = "accounts/login.html"
+    #template_name = "accounts/login.html"
 
     def get_form(self, form_class=None):
         if form_class is None:

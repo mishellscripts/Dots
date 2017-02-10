@@ -1,0 +1,78 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400|Roboto:300,400,400italic,500,700,100);
+
+/* ================================
+       MOBILE DEVICE SUPPORT
+================================== */
+
+@media screen and (min-width: 480px) {
+    #form_container {
+        position: relative;
+        left: 10%;
+        width: 80%;
+    }
+    #login_button, #signup_button {
+        width: 50%;
+        position: relative;
+        left: 25%;
+    }
+}
+
+@media screen and (min-width: 660px) {
+    #form_container {
+        left: 0%;
+        max-width: 500px;
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+    #login_button, #signup_button {
+
+    }
+}
+
+/* ================================
+         LOGIN FORM
+
+ [ ]  Incorrect password case
+      - Change color of labels
+      - Change appearance of message
+ [ ]  Consistent borders
+================================== */
+
+#post_form label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+}
+
+#post_form .test input{
+    font-size: 1.3em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    border-radius: 25px;
+    height: 50px;
+    border: solid #ffd139 medium;
+}
+
+#post_form .test input:focus {
+    box-shadow: none;
+}
+
+#login_button, #signup_button {
+    font-family: 'Montserrat', sans-serif;
+    /*border: solid #fff 1px;*/
+    border-radius: 25px;
+    /**padding: 10px 100px !important;*/
+    margin: 0 auto;
+    font-size: 1.5em !important;
+    border-color: #F7971E;
+    color: #F7971E;
+}
+
+#button_container {
+    margin-top: 10%;
+}
+
+#signup_button a{
+    text-decoration: none;
+    color: #F7971E;
+}
+
