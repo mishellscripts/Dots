@@ -20,7 +20,10 @@
 
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <script type="text/javascript">
+
         $(document).ready(function () {
+            $('body').addClass('fadeout');
+
             var div = 360 / 7;
             var radius = 28;
             var logo = document.getElementById('logo');
@@ -59,7 +62,7 @@
         <!-- DECLARE URL VARIABLES HERE -->
         {% url 'about' as about_url %}
         {% url 'post:view' as view_url %}
-        {% url 'sign_in' as sign_in_url %}
+        {% url 'accounts:login' as sign_in_url %}
 
         {% if request.get_full_path == about_url %}
             <li id="link_active"><a href="{% url 'about' %}">About</a></li>

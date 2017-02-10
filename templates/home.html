@@ -3,7 +3,7 @@
 {% load static from staticfiles %}
 
 
-{% block title %}Homepage{% endblock %}
+{% block title %}Title{% endblock %}
 {% block static %}
     <link rel="stylesheet" type="text/css" href="{% static "css/home.css" %}"/>
     <script src="{% static "js/home.js" %}" type="text/javascript"></script>
@@ -14,16 +14,18 @@
 
             $("#post_form textarea").focus();
 
-             $("#post_form").on("click", function() {
-                 $('#main_container').stop().animate({backgroundColor: "#8699CC"}, 1000);
-                 /** CHANGE BACKGROUND COLOR OF POST FORM TO BLUE AND TEXT COLOR TO WHITE **/
+             $("#post_form").keyup(function() {
+                 $('#main_container').stop().animate({backgroundColor: "#8699CC"}, 500);
                  $('#post_form textarea').stop().animate({color: "#FFFFFF"}, 1000);
              });
-             $("#post_form").focusout(function() {
+             /*$("#post_form").focusout(function() {
                  $('#main_container').stop().animate({backgroundColor: "#FFFFFF"}, 1000);
                  $('#post_form textarea').stop().animate({color: "#a9a9a9"}, 1000);
                  $('#post_form textarea').focus()
-             });
+             });*/
+             $("#post_form").on("submit", function() {
+                /** Shrink circle, fade out prompt and button, move circle to corner */
+             })
 
         });
 

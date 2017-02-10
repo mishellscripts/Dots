@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% load static from staticfiles %}
+
+{% block title %}
+    Logged out
+{% endblock %}
+{% block static %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/logged_out.css" %}"/>
+{% endblock %}
+{% block content %}
+    <div id="container">
+        <h1>You have been logged out</h1>
+        Click <a href="{% url 'accounts:login' %}">here</a> to log in again.
+    </div>
+{% endblock %}

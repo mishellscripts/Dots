@@ -1,0 +1,38 @@
+/*
+[ ] Be able to close a div with transitioning
+[ ] Be able to add
+[ ] Be able to
+ */
+
+.post_container {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin: 1em auto;
+    margin-right: 50px;
+    margin-left: 50px;
+    border-radius: 0%;
+    background: #8699CC;
+    box-shadow: 3px 3px 10px #ececec;
+    /**border-style: solid;
+    border-width: 1px;
+    border-right-color: silver;
+    border-bottom-color: silver;
+    border-left-color: #fff;
+    border-top-color: #fff;*/
+    transition: all .1s ease-in-out;
+}
+
+.post_container:hover {
+transition: all .1s ease-in-out;
+transform: scale(1.5);
+}
+
+.post_container .post_text {
+    text-align: center;
+    position: relative;
+    top: 20%;
+    font-family: Roboto, 'sans-serif';
+    font-size: 1.5em;
+    color: white;
+}

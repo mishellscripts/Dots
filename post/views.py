@@ -1,17 +1,21 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views import generic
+from django.views.generic import ListView
+from django.core.urlresolvers import reverse_lazy
 
-from . import models, forms
+from . import forms
+from .models import Post
 
-class UserView(LoginRequiredMixin, generic.TemplateView):
-    model = models.Post
-    template_name = 'user_view.html'
+"""def view(request):
+    def get_queryset(self):
+        return models.Post.objects.all()
+    return render(request, 'post/view.html')"""
 
-def view(request):
-    return render(request, 'post/view.html')
+class PostsView(ListView):
+    model = Post
+    context_object_name = 'posts'
+    template_name = 'post/view.html'
 
 def post_create(request):
     form = forms.PostForm()
@@ -19,6 +23,8 @@ def post_create(request):
         form = forms.PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
+            if request.user.is_authenticated():
+                post.user = request.user
             post.save()
             # messages.add_message(request, messages.SUCCESS, "Post added!")
             #messages.success(request, ("Post added!"))
