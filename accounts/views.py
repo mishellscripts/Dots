@@ -38,7 +38,7 @@ class SignUp(generic.CreateView):
 class PostsByUserView(LoginRequiredMixin, ListView):
     model = Post
     context_object_name = 'posts'
-    template_name = 'post/user_view.html'
+    template_name = 'post/view.html'
 
     login_url = reverse_lazy("login")
     redirect_field_name = 'redirect_to'

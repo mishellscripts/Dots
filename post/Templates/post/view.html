@@ -1,24 +1,13 @@
-<!-- INTEGRATE THIS WITH USER_VIEW, VERY SIMILAR -->
-
 {% extends "layout.html" %}
 {% load static from staticfiles %}
-
-{% block title %}Community{% endblock %}
+{% block title %}My posts{% endblock %}
 
 {% block static %}
     <link rel="stylesheet" type="text/css" href="{% static "css/view.css" %}"/>
 {% endblock %}
 
 {% block content %}
-    <h1 id="user_view"><a href="{% url 'accounts:user_view' %}">View my own</a></h1>
     {% for post in posts %}
-        <div class="post_container">
-            <p class="post_text">{{ post.text }}</p>
-            {% if post.user.is_anonymous %}
-                <p>Anonymous</p>
-            {% else %}
-                <p>{{ post.user }}</p>
-            {% endif %}
-        </div>
+        <div class="post_container"><p class="post_text">{{ post.text }}</p></div>
     {% endfor %}
 {% endblock %}

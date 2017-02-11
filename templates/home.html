@@ -27,6 +27,13 @@
                 /** Shrink circle, fade out prompt and button, move circle to corner */
              })
 
+            $("#post_form").keypress(function (e) {
+               if (e.which == 13) {
+                   $(this).submit();
+                   return false;
+               }
+            });
+
         });
 
     </script>

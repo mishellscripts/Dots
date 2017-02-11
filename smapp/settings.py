@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'jquery',
     'jquery_ui',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

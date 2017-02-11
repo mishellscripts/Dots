@@ -17,10 +17,11 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 from . import views
-from post import views as view2
+from post import views as postviews
 
 urlpatterns = [
-    url(r'^$', view2.post_create, name='main'),
+    url(r'^$', postviews.post_create, name='main'),
+    #url(r'^$', view2.PostCreate.as_view(), name='main'),
     #url(r'^$', views.main_page, name='main'),
     url(r'^post/', include('post.urls', namespace='post')),
     url(r'^admin/', admin.site.urls),
@@ -29,5 +30,9 @@ urlpatterns = [
     url(r'^about/', views.about, name='about'),
     #url(r'^signin/', views.sign_in, name='sign_in'),
     url(r'^suggestions/$', views.suggestion_view, name='suggestion'),
+    #url(r'^view/related', postviews.PostsSearchView.as_view(), name='view_related'),
+    # url(r'^view/(?P<keyword>\w+)/', views.PostsSearchView.as_view(), name='view_related'),
+    url(r'^view/related/(?P<post_id>\d+)/$', postviews.post_search, name='view_related'),
+    url(r'^view/', postviews.PostsView.as_view(), name='view'),
 ]
 
