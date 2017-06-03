@@ -14,7 +14,7 @@
     {% for post in posts %}
         <div class="post_container">
             <p class="post_text">{{ post.text }}</p>
-            {% if post.user.is_anonymous %}
+            {% if post.user.id == None %}
                 <p>Anonymous</p>
             {% else %}
                 <p>{{ post.user }}</p>

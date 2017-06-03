@@ -17,6 +17,7 @@ class PostForm(forms.ModelForm):
     def clean(self):
         # get ALL of the data
         cleaned_data = super().clean()
-        text = cleaned_data['text']
+        if ('text' in cleaned_data.keys()):
+            text = cleaned_data['text']
 
         # SECURITY CHECK HERE

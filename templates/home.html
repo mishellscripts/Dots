@@ -3,7 +3,7 @@
 {% load static from staticfiles %}
 
 
-{% block title %}Title{% endblock %}
+{% block title %}Dots{% endblock %}
 {% block static %}
     <link rel="stylesheet" type="text/css" href="{% static "css/home.css" %}"/>
     <script src="{% static "js/home.js" %}" type="text/javascript"></script>
@@ -43,7 +43,7 @@
 {% block content %}
     <div id="main_container">
         <!--<div id="main_divider"></div>-->
-        <h1 id="prompt">Text?</h1>
+        <h1 id="prompt">Thoughts?</h1>
         <div class="message">
             {% for message in messages %}
                 {% if messages %}
