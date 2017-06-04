@@ -4,13 +4,12 @@
 [ ] Be able to
  */
 
-#user_view_link {
+#user_view_link a{
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em;
     color: #8699CC;
 }
 
-#user_view_link:hover {
+#user_view_link a:hover {
     text-decoration: none;
 }
 
@@ -38,11 +37,41 @@ transition: all .1s ease-in-out;
 transform: scale(1.3);
 }
 
-.post_container .post_text {
+.text_container {
+    position: relative;
+    top: 10%;
+    font-family: Roboto, 'sans-serif';
+    color: white;
+}
+
+.post_text {
     text-align: center;
     position: relative;
-    top: 20%;
-    font-family: Roboto, 'sans-serif';
     font-size: 1.5em;
+    margin-bottom: -5%;
+}
+
+.user_text {
+    position: relative;
+    left: 33%;
+}
+
+.like_icon {
     color: white;
+    font-size: 2em;
+    position: relative;
+    left: 41.8%;
+    margin-top: 10%;
+}
+
+.like_icon:hover {
+    cursor: pointer;
+}
+
+.remove_icon:hover {
+    cursor: pointer;
+}
+
+.remove_icon:hover .like_icon {
+    color: #ffd139;
 }

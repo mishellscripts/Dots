@@ -3,16 +3,19 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView, CreateView
 from django.core.urlresolvers import reverse_lazy
+from django.db.models import Q
 
 from .forms import PostForm
 from .models import Post
 from .serializers import PostSerializer
 from .nlp_helper import *
-
+from functools import reduce
 
 import nltk
 import random
 import tflearn
+import operator
+
 
 class PostsView(ListView):
     model = Post
@@ -46,15 +49,20 @@ def post_search(request, post_id):
     #posts = Post.objects.filter(text__icontains=post.text)
     #print(words.most_common(15))
 
-    # parse posts into single list of words
-    words = get_words(posts)
+    #parse post into single list of words
+    words = nltk.word_tokenize(post.text)
 
-    # get top 100 words from posts
-    word_features = list(words.keys())[:100]
+    #get frequency of all words
+    words = nltk.FreqDist(words)
 
-    feature_set = [(find_features(post, word_features)) for post in posts]
+    # get important keywords of post (also need to check for adverbs that could be same)
+    keywords = list(words.keys())[:3]
 
-    print(feature_set)
+    #posts must have some of keywords & share same sentiment emotion
+    posts = Post.objects.filter(
+        reduce(operator.or_, (Q(text__icontains=k) for k in keywords))
+    )
+
     return render(request, 'post/public_view.html', {'posts': posts})
 
 

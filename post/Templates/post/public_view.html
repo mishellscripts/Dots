@@ -7,20 +7,31 @@
 
 {% block static %}
     <link rel="stylesheet" type="text/css" href="{% static "css/view.css" %}"/>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+        });
+
+    </script>
 {% endblock %}
 
 {% block content %}
     <h1 id="user_view_link"><a href="{% url 'accounts:user_view' %}">View my own</a></h1>
     {% for post in posts %}
         <div class="post_container">
-            <p class="post_text">{{ post.text }}</p>
-            {% if post.user.id == None %}
-                <p>Anonymous</p>
-            {% else %}
-                <p>{{ post.user }}</p>
-            {% endif %}
+            <!-- temp delete -->
+            <i class="fa fa-times remove_icon" aria-hidden="true"></i>
+            <div class="text_container">
+                <p class="post_text"> {{ post.text }} </p>
+                {% if post.user.id == None %}
+                    <p class="user_text">- Anonymous</p>
+                {% else %}
+                    <p class="user_text">- {{ post.user }}</p>
+                {% endif %}
+            </div>
         {% if user.is_authenticated %}
-            <span class="glyphicon glyphicon-heart" id="like_icon"></span>
+            <i class="fa fa-heart like_icon" aria-hidden="true"></i>
         {% endif %}
         </div>
     {% endfor %}

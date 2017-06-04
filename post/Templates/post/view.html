@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% load static from staticfiles %}
+
 {% block title %}My thoughts{% endblock %}
 
 {% block static %}
@@ -11,7 +12,13 @@
         Nothing here yet. Want to share your thoughts? :)
     {% else %}
         {% for post in posts %}
-            <div class="post_container"><p class="post_text">{{ post.text }}</p></div>
+            <div class="post_container">
+                <!-- perm delete -->
+                <i class="fa fa-times remove_icon" aria-hidden="true"></i>
+                <div class="text_container">
+                    <p class="post_text">{{ post.text }}</p>
+                </div>
+            </div>
         {% endfor %}
     {% endif %}
 {% endblock %}
