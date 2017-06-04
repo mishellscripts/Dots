@@ -8,6 +8,7 @@ def must_be_empty(value):
         raise forms.validationError('is not empty')
 
 # identical to creating a model
+# needs to be safer than this..
 class SuggestionForm(forms.Form):
     name = forms.CharField(max_length=255) # is max len needed?
     email = forms.EmailField(max_length=255)

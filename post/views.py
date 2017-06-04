@@ -7,6 +7,12 @@ from django.core.urlresolvers import reverse_lazy
 from .forms import PostForm
 from .models import Post
 from .serializers import PostSerializer
+from .nlp_helper import *
+
+
+import nltk
+import random
+import tflearn
 
 class PostsView(ListView):
     model = Post
@@ -30,14 +36,27 @@ class PostsView(ListView):
 """
 
 def post_search(request, post_id):
-    # Extract important keywords here
+    #Extract important keywords here
     #content = request.REQUEST.get('post')
     #if 'text' in request.session:
         #text = request.session['text']
     post = get_object_or_404(Post, pk=post_id)
-    posts = Post.objects.filter(text__icontains=post.text)
+    posts = Post.objects.all().order_by('-created_at')
 
+    #posts = Post.objects.filter(text__icontains=post.text)
+    #print(words.most_common(15))
+
+    # parse posts into single list of words
+    words = get_words(posts)
+
+    # get top 100 words from posts
+    word_features = list(words.keys())[:100]
+
+    feature_set = [(find_features(post, word_features)) for post in posts]
+
+    print(feature_set)
     return render(request, 'post/public_view.html', {'posts': posts})
+
 
 def post_create(request):
     form = PostForm()
@@ -57,10 +76,3 @@ def post_create(request):
             #return HttpResponseRedirect(reverse_lazy('view_related'), {'post': post})
             return redirect('view_related', post_id=post.id)
     return render(request, './home.html', {'form': form})
-
-"""class PostCreate(CreateView):
-    model = Post
-    form_class = PostForm
-    template_name = 'home.html'
-
-    return redirect('/view/%s' %)"""

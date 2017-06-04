@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-    <h1 id="user_view"><a href="{% url 'accounts:user_view' %}">View my own</a></h1>
+    <h1 id="user_view_link"><a href="{% url 'accounts:user_view' %}">View my own</a></h1>
     {% for post in posts %}
         <div class="post_container">
             <p class="post_text">{{ post.text }}</p>
@@ -19,6 +19,9 @@
             {% else %}
                 <p>{{ post.user }}</p>
             {% endif %}
+        {% if user.is_authenticated %}
+            <span class="glyphicon glyphicon-heart" id="like_icon"></span>
+        {% endif %}
         </div>
     {% endfor %}
 {% endblock %}

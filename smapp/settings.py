@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'jquery',
     'jquery_ui',
     'rest_framework',
+    'tensorflow',
 ]
 
 MIDDLEWARE = [

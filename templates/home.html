@@ -16,23 +16,32 @@
 
              $("#post_form").keyup(function() {
                  $('#main_container').stop().animate({backgroundColor: "#8699CC"}, 500);
-                 $('#post_form textarea').stop().animate({color: "#FFFFFF"}, 1000);
+                 $('#post_form textarea').stop().animate({color: "#FFFFFF"}, 500);
+                 $('#prompt').stop().animate({color: "#FFFFFF"}, 500);
              });
              /*$("#post_form").focusout(function() {
                  $('#main_container').stop().animate({backgroundColor: "#FFFFFF"}, 1000);
                  $('#post_form textarea').stop().animate({color: "#a9a9a9"}, 1000);
                  $('#post_form textarea').focus()
              });*/
-             $("#post_form").on("submit", function() {
-                /** Shrink circle, fade out prompt and button, move circle to corner */
-             })
-
             $("#post_form").keypress(function (e) {
-               if (e.which == 13) {
+                /* disable typing too */
+               if (e.which == 13 && !$('#main_container').hasClass('smaller')) {
                    $(this).submit();
                    return false;
                }
             });
+            $("#post_form").submit(function(e) {
+                e.preventDefault();
+                /** Shrink circle, fade out prompt and button, move circle to corner */
+                $('#main_container').addClass('smaller', function() {
+                    $('#main_container').addClass('move_top', function () {
+                        $("#post_form").unbind("submit").submit();
+                    })
+                });
+                $('#prompt').css('color', '#8699CC');
+                $('#submit_button').css('display', 'none');
+            })
 
         });
 

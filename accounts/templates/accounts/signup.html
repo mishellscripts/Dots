@@ -1,18 +1,24 @@
-<!-- CAN THIS ALSO BE IN REGISTRATION DIRECTORY? -->
-
 {% extends "layout.html" %}
+{% load static from staticfiles %}
 {% load bootstrap3 %}
+
+{% block static %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/login.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "css/signup.css" %}"/>
+{% endblock %}
 
 {% block title %}
     Sign Up
 {% endblock %}
 
 {% block content %}
-<div>
-    <form method="POST">
-        {% csrf_token %}
-        {% bootstrap_form form %}
-        <input type="submit" value="Sign Up" class="btn btn-default">
-    </form>
-</div>
+    <div id="form_container">
+        <form action="" method="POST" id="post_form">
+            <div class="test">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+            </div>
+            <input type="submit" id="signup_button" value="Sign Up" class="btn btn-default">
+        </form>
+    </div>
 {% endblock %}

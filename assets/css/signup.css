@@ -1,0 +1,8 @@
+#signup_button {
+    background: #F7971E;
+    background: -webkit-linear-gradient(to left, #f2ac15, #FFD200);
+    background: linear-gradient(to left, #f2ac15, #FFD200);
+    color: #fff;
+    float: right;
+    width: 40%;
+}

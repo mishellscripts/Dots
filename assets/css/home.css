@@ -73,6 +73,18 @@
     border-top-color: #fff;*/
 }
 
+.move_top {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: all 1s ease-in-out;
+}
+
+.smaller {
+    transform: scale(0.3333);
+    transition: all 1s ease-in-out;
+}
+
 #form_container {
     position: relative;
     top: 10%;
